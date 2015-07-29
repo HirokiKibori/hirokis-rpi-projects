@@ -1,4 +1,23 @@
-body
-{
-    background-color: #EBFFD6;
+body {
+    background-color:   #FAFFF5;
+}
+
+.head {
+    height:             150px;
+}
+
+.head, .body {
+    padding:            10px;
+}
+
+.logo {
+    float:              left;
+}
+
+.title {
+    text-align:         center;
+}
+
+.logo, .title {
+    height:             100%;
 }

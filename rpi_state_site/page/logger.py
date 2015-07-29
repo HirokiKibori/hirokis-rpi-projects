@@ -2,8 +2,13 @@ import logging
 import os
 
 
-# reset log_level and add log_handler
 def set_log_file_handler(app, folder_path='logs'):
+    """
+    Reset log_level and add some log_handler.
+    :param app: application-object
+    :param folder_path: path for the log-folder
+    """
+
     if app is None:
         pass
 

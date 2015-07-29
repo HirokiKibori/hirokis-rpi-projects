@@ -1,0 +1,23 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <link href="{{url_for('static', filename='base.css')}}" rel="stylesheet" type="text/css">
+    <title>"Raspberry Pi" - Stats</title>
+</head>
+
+<body>
+    <div class="head">
+        <div class="logo">
+            <a href="http://www.raspberrypi.org/" target="_blank">
+                <img src="{{url_for('static', filename='Raspi_Colour_R-207x250.png')}}" alt="Raspberry Pi" style="width:104px;height:125px;">
+            </a>
+        </div>
+        <div class="title">
+            <p><h1>"Raspberry Pi" - Stats</h1></p>
+            <p>Current time: {{time}}</p>
+        </div>
+    </div>
+    <div class="body">
+        {% block main_body %}{% endblock %}
+    </div>
+</body>
