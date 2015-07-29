@@ -1,5 +1,5 @@
 from flask import Flask
-from site.controller import home
+from page.controller import home
 
 
 app = Flask(__name__)
