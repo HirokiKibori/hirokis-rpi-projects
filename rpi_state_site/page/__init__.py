@@ -1,11 +1,17 @@
 from flask import Flask, render_template
 from page.controller import home
-from datetime import datetime
 
 
 # instantiation for appliation-object
 app = Flask(__name__)
 app.config.from_pyfile('../config/configuration.py')
+
+
+# template-globals
+@app.template_global()
+def time():
+    import datetime
+    return datetime.datetime.now().strftime("%Y-%m-%d | %H:%M:%S")
 
 
 # request-mappings
@@ -18,6 +24,6 @@ def page_not_found(error):
     :return: rendered template for error-page
     """
     app.logger.error(error)
-    return render_template('error_page_404.html', time=datetime.now().strftime("%Y-%m-%d | %H:%M:%S")), 404
+    return render_template('error_page_404.html'), 404
 
 app.register_blueprint(home.home)

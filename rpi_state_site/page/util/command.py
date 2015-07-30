@@ -1,9 +1,8 @@
 import subprocess
 
 
-def run_hell_command(args):
-    process = subprocess.Popen(args, stdout=subprocess.PIPE, shell=True)
-
+def run_shell_command(args):
+    process = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     (out, err) = process.communicate()
 
     if err is not None:
