@@ -21,3 +21,10 @@ body {
 .logo, .title {
     height:             100%;
 }
+
+.foot {
+    clear:              both;
+    width:              100%;
+    height:             75px;
+    padding:            10px;
+}

@@ -1,4 +1,10 @@
 {% extends "basic_page.html" %}
 {% block main_body %}
-    <h2>Server is running ...</h2>
+        <h2>Server is running ...</h2>
+        <div style="border-style: solid;border-width: 1px;padding: 10px;float: left;">
+            <h3>IP-Config</h3>
+            <p style="white-space: pre-wrap;font-size: 0.8em;">
+                {{ip_information}}
+            </p>
+        </div>
 {% endblock %}
