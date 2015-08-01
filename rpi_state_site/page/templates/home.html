@@ -1,10 +1,20 @@
 {% extends "basic_page.html" %}
 {% block main_body %}
-        <h2>Server is running ...</h2>
-        <div style="border-style: solid;border-width: 1px;padding: 10px;float: left;">
-            <h3>IP-Config</h3>
-            <p style="white-space: pre-wrap;font-size: 0.8em;">
-                {{ip_information}}
-            </p>
+        <div class="panel panel-default pull-left">
+            <div class="panel-heading">
+                <h3 class="panel-title">Server is running ...</h3>
+            </div>
+            <div class="panel-body">
+            </div>
+        </div>
+        <div class="panel panel-default pull-left">
+            <div class="panel-heading">
+                <h3 class="panel-title">IP-Config</h3>
+            </div>
+            <div class="panel-body">
+                <p class="shelloutput">
+                    {{ip_information}}
+                </p>
+            </div>
         </div>
 {% endblock %}

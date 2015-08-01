@@ -1,24 +1,73 @@
-<!doctype html>
-<head>
-    <meta charset="UTF-8">
-    <link href="{{url_for('static', filename='base.css')}}" rel="stylesheet" type="text/css">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Uwe Schmidt">
+    <link rel="icon" href="{{url_for('static', filename='favicon.ico')}}">
+
     <title>"Raspberry Pi" - Stats</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{url_for('static', filename='css/bootstrap-theme.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='custom.css')}}" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="{{url_for('static', filename='js/ie8-responsive-file-warning.js')}}"></script><![endif]-->
+    <script src="{{url_for('static', filename='js/ie-emulation-modes-warning.js')}}"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
-<body>
-    <div class="head">
-        <div class="logo">
-            <a href="http://www.raspberrypi.org/" target="_blank">
-                <img src="{{url_for('static', filename='Raspi_Colour_R-207x250.png')}}" alt="Raspberry Pi" style="width:104px;height:125px;">
-            </a>
+<body class="container-fluid">
+    <header class="row page-header" role="banner">
+        <div class="container">
+            <div class="col-md-1">
+                <img src="{{url_for('static', filename='logo.png')}}" alt="Raspberry Pi"/>
+            </div>
+            <div class="col-md-11">
+                <div class="text-center">
+                    <h1>
+                        "Raspberry Pi" - Stats<br /><small>Current time: {{time()}}</small>
+                    </h1>
+                </div>
+            </div>
         </div>
-        <div class="title">
-            <p><h1>"Raspberry Pi" - Stats</h1></p>
-            <p>Current time: {{time()}}</p>
+    </header>
+    <nav class="navbar navbar-inverse">
+        <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+        </ul>
+    </nav>
+    <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-12" role="main">
+                {% block main_body %}{% endblock %}
+            </div>
         </div>
     </div>
-    <div class="body">
-        {% block main_body %}{% endblock %}
-    </div>
-    <div class="foot"></div>
+    <footer class="bs-docs-footer" role="contentinfo">
+        <div class="container-fluid">
+            <div class="col-md-1">
+                <a href="http://www.raspberrypi.org/" target="_blank">
+                    <img src="{{url_for('static', filename='Raspi_Colour_R-207x250.png')}}" alt="Raspberry Pi"/>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{url_for('static', filename='js/jquery-1.11.3.min.js')}}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
 </body>
