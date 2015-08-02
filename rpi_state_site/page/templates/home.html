@@ -1,20 +1,15 @@
 {% extends "basic_page.html" %}
 {% block main_body %}
+    {% for (command, out) in command_results %}
         <div class="panel panel-default pull-left">
             <div class="panel-heading">
-                <h3 class="panel-title">Server is running ...</h3>
-            </div>
-            <div class="panel-body">
-            </div>
-        </div>
-        <div class="panel panel-default pull-left">
-            <div class="panel-heading">
-                <h3 class="panel-title">IP-Config</h3>
+                <h3 class="panel-title">{{command}}</h3>
             </div>
             <div class="panel-body">
                 <p class="shelloutput">
-                    {{ip_information}}
+                    {{out}}
                 </p>
             </div>
         </div>
+    {%endfor %}
 {% endblock %}
